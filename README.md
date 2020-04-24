@@ -6,7 +6,7 @@ Create a `UserCard` component.
 * The component should render a styled user card.
 * The component should take a `userId` as props.
 * Upon mounting, the component should make a fetch request to `https://reqres.in/api/users/{userId}`. Then it should display the following user data:
-  * name
+  * email
   * first_name
   * last_name
   * avatar
