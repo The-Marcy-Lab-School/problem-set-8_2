@@ -17,3 +17,5 @@ Create a `UserCard` component.
 
 ## Due Date
 Submit via Pull Request by Monday, April 27 @ 9AM
+
+Run **npx serve** if you want to view 
