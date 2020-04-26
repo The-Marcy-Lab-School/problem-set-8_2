@@ -1,9 +1,12 @@
 import React from 'react';
 import './App.css';
 import Card from './UserCard.jsx';
+import getUsers from './getUsers.js';
 
 function App() {
   console.log('connected')
+  const { email, first_name, last_name, avatar } = getUsers('https://reqres.in/api/users');
+  console.log(email, first_name, last_name, avatar)
   return (
     <main className='cards'>
       
