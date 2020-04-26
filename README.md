@@ -14,6 +14,9 @@ Create a `UserCard` component.
 
 ### Extra Credit
 * Experiment with [Material UI](https://material-ui.com/) for some out-of-the-box styling on your components.
+* [reqres.in](https://reqres.in) gives us twelve mock user profiles. Add in a search feature to render a card by User ID.
+
+[**Demo Project**](https://evening-plains-85867.herokuapp.com/)
 
 ## Due Date
 Submit via Pull Request by Monday, April 27 @ 9AM
