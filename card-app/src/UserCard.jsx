@@ -5,37 +5,51 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import getUsers from './getUsers';
 
 const useStyles = makeStyles({
   root: {
+    maxHeight: 200,
     maxWidth: 345,
   },
 });
 
 const UserCard = () => {
+  let results = [];
+  // const userID = 4;
+  const [user, setUser] = React.useState(results);
+  const [isLoading, setIsLoading] = React.useState(true);
+
   const classes = useStyles();
+
+  React.useEffect(() => {
+    getUsers('5')
+      .then(data => {
+        setUser(data);
+        setIsLoading(false);
+      });
+  }, []);
+
+  
 
   return (
   <Card className={classes.root}>
     <CardActionArea>
-      {/* <CardMedia
+      <CardMedia
           component="img"
           alt="Contemplative Reptile"
-          height="140" //200maybe ?
+          height="120"
           width="345"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-      /> */}
-      <img src='https://via.placeholder.com/345x200/FFFF00/000000'/>
+          image={user.avatar}
+          title="user avatar"
+      />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
-              Peter Rose
+        {`${ user.first_name } ${ user.last_name }`}
         </Typography>
 
         <Typography variant="body2" color="textSecondary" component="p">
-            Fellow @MarcyLabSchool 
-            Software Engineer
-            Pokemon Master
+            { user.email }
         </Typography>
       </CardContent>
       </CardActionArea>
