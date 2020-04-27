@@ -21,11 +21,11 @@ const UserCard = () => {
     first_name: 'loading...',
     last_name:'loading...'
   });
-
+let number = Math.floor(Math.random() * 12) + 1  
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
-    getUsers('3')
+    getUsers(number.toString())
       .then(data => {
         setUser(data);
         setIsLoading(false);
