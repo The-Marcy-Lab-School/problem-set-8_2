@@ -1,0 +1,23 @@
+{
+  "name": "problem-set-8_2",
+  "version": "1.0.0",
+  "description": "## Directions Create a `UserCard` component. * The component should render a styled user card. * The component should take a `userId` as props. * Upon mounting, the component should make a fetch request to `https://reqres.in/api/users/{userId}`. Then it should display the following user data:   * email   * first_name   * last_name   * avatar * While waiting for a response, (as in, when the component first mounts) the card should display `\"Loading...\"` for each of these fields.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seal125/problem-set-8_2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Seal125/problem-set-8_2/issues"
+  },
+  "homepage": "https://github.com/Seal125/problem-set-8_2#readme",
+  "dependencies": {
+    "serve": "^11.3.0"
+  }
+}
