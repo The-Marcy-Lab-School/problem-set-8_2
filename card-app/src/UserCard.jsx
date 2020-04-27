@@ -9,28 +9,30 @@ import getUsers from './getUsers';
 
 const useStyles = makeStyles({
   root: {
-    maxHeight: 200,
-    maxWidth: 345,
+    maxHeight: 1000,
+    maxWidth: 545,
   },
 });
 
 const UserCard = () => {
-  let results = [];
-  // const userID = 4;
-  const [user, setUser] = React.useState(results);
+  const [user, setUser] = React.useState({
+    avatar:'loading...',
+    email:'loading...',
+    first_name: 'loading...',
+    last_name:'loading...'
+  });
+
   const [isLoading, setIsLoading] = React.useState(true);
 
-  const classes = useStyles();
-
   React.useEffect(() => {
-    getUsers('5')
+    getUsers('3')
       .then(data => {
         setUser(data);
         setIsLoading(false);
       });
   }, []);
 
-  
+  const classes = useStyles();
 
   return (
   <Card className={classes.root}>
@@ -38,8 +40,8 @@ const UserCard = () => {
       <CardMedia
           component="img"
           alt="Contemplative Reptile"
-          height="120"
-          width="345"
+          height="220"
+          width="545"
           image={user.avatar}
           title="user avatar"
       />
