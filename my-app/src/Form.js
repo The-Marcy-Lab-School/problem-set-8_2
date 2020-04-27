@@ -1,27 +1,12 @@
-const App = () => {
+import React from 'react';
+import Card from './Card';
+import './App.css';
+
+function Form(){
   const [userId, setUserId] = React.useState(1);
 
-  const [userProfilePicture, setProfilePicture] = React.useState('Loading...')
-  const [userFirstName, setFirstName] = React.useState('Loading...')
-  const [userLastName, setLastName] = React.useState('Loading...')
-  const [userEmail, setEmail] = React.useState('Loading...')
-
-  React.useEffect(() => {
-    async function getUserData(userId) {
-      const response = await fetch(`https://reqres.in/api/users/${userId}`)
-      const data = await response.json()
-
-      setProfilePicture(data.data.avatar)
-      setFirstName(data.data.first_name)
-      setLastName(data.data.last_name)
-      setEmail(data.data.email)
-    }
-    getUserData(userId)
-  }, [userId])
-
-
-	return (
-    <div>
+  return (
+    <section>
       <form class="userForm">
       <label>Choose a User</label>
         <select>
@@ -39,15 +24,9 @@ const App = () => {
           <option  onClick={() => setUserId(12)} value='User 12'>User 12</option>
         </select>
       </form>
+      <Card userId={userId}/>
+    </section>
+  )
+}
 
-      <article>
-        <img src={userProfilePicture}>
-        <h1>{userFirstName} {userLastName}</h1>
-        <h3>{userEmail}</h3>
-      </article>
-		</div>
-	)
-
-};
-
-ReactDOM.render(<App />, document.querySelector('.card'));
+export default Form;
