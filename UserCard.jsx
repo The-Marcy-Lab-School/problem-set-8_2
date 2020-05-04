@@ -8,7 +8,7 @@ function UserCard({ userId }){
         setUsers(user);
         setIsLoading(false);
       });
-  },[]);
+  },[userId]);
   
   
   return (
