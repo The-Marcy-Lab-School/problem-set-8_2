@@ -2,15 +2,17 @@ import React from 'react';
 import Card from './Card';
 
 function App() {
+  const userIds = [1, 2, 3, 4, 5, 6]; 
+  
+  const displayCards = userIds.map(id => {
+    return (
+      <Card key={id} userId={id}/>
+      );
+  });
   
   return (
-    <div className="App">
-      <Card userId='1'/>
-      <Card userId='2'/>
-      <Card userId='3'/>
-      <Card userId='4'/>
-      <Card userId='5'/>
-      <Card userId='6'/>
+    <div>
+      {displayCards}
     </div>
   );
 }
