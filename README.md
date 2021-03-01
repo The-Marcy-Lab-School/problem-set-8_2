@@ -1,4 +1,4 @@
-# Problem Set 8.2
+# Problem Set: useEffect
 ### Working with the `useEffect` Hook
 
 ## Directions
@@ -18,5 +18,3 @@ Create a `UserCard` component.
 
 [**Demo Project**](https://evening-plains-85867.herokuapp.com/)
 
-## Due Date
-Submit via Pull Request by Monday, April 27 @ 9AM
