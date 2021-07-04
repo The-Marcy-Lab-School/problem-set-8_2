@@ -1,0 +1,17 @@
+body {
+    display:flex;
+    align-content:center;
+    justify-content:center;
+}
+
+.card {
+    margin:5%;
+    padding:5%;
+    border: 1px solid black;
+    width: 200px;
+}
+
+.pic {
+    width:100px;
+    height:100px;
+}
